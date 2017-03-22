@@ -25,3 +25,8 @@ app.get('/js/:filename', (req, res) => {
 const io = require('socket.io')(server);
 const chatrooms = require('./chatrooms');
 chatrooms(io);
+
+app.get('/message', (req, res) => {
+  io.sockets.in('Lobby').emit('/room/message', { cmd:'hello' });
+  res.sendFile('index.html', { root: path.join(__dirname, '../html') });
+});
