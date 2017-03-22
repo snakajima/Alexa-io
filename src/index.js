@@ -26,7 +26,7 @@ const io = require('socket.io')(server);
 const chatrooms = require('./chatrooms');
 chatrooms(io);
 
-app.get('/message', (req, res) => {
-  io.sockets.in('Lobby').emit('/room/message', { cmd:'hello' });
-  res.sendFile('index.html', { root: path.join(__dirname, '../html') });
+app.get('/ping', (req, res) => {
+  io.sockets.in('Lobby').emit('/room/message', { cmd:'ping' });
+  res.sendFile('success.json', { root: path.join(__dirname, '../js') });
 });
