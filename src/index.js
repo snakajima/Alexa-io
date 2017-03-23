@@ -35,6 +35,6 @@ app.get('/ping', (req, res) => {
 });
 
 app.post('/intent', jsonParser, (req, res) => {
-  console.log('intent' + req.body);
+  console.log('intent', req.body);
   res.sendFile('success.json', { root: path.join(__dirname, '../js') });
 });
