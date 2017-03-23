@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 const path = require('path');
 
 const serverPort = 8080;
@@ -32,7 +34,7 @@ app.get('/ping', (req, res) => {
   res.sendFile('success.json', { root: path.join(__dirname, '../js') });
 });
 
-app.post('/intent', (req, res) => {
-  console.log('intent');
+app.post('/intent', jsonParser, (req, res) => {
+  console.log('intent' + req.body);
   res.sendFile('success.json', { root: path.join(__dirname, '../js') });
 });
