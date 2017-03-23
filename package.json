@@ -6,10 +6,11 @@
   "author": "Satoshi Nakajima",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.4",
+      "express": "^4.13.4",
+    "forever": "^0.15.3",
     "socket.io": "^1.4.6"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "forever start src/index.js"
   }
 }
