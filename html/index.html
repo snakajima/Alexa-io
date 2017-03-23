@@ -4,7 +4,16 @@
     <script src="/js/remote.io.js"></script>
     <script>
         remoteIO.onIntent = (intent) => {
-            console.log('my intent', intent.name);
+            switch(intent.name) {
+            case 'GetNavigationIntent':
+              console.log('Navigate to ' + intent.slots.City.value);
+              break;
+            case 'GetCityIntent':
+              console.log('Show me ' + intent.slots.City.value);
+              break;
+            default:
+              console.log('unknown intent', intent.name);
+            }
         }
     </script>
 </head>
