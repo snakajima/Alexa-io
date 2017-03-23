@@ -31,3 +31,8 @@ app.get('/ping', (req, res) => {
   io.sockets.in('Lobby').emit('/room/message', { cmd:'ping' });
   res.sendFile('success.json', { root: path.join(__dirname, '../js') });
 });
+
+app.post('/intent', (req, res) => {
+  console.log('intent');
+  res.sendFile('success.json', { root: path.join(__dirname, '../js') });
+});
