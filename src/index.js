@@ -27,6 +27,7 @@ const chatrooms = require('./chatrooms');
 chatrooms(io);
 
 app.get('/ping', (req, res) => {
+  console.log('ping');
   io.sockets.in('Lobby').emit('/room/message', { cmd:'ping' });
   res.sendFile('success.json', { root: path.join(__dirname, '../js') });
 });
