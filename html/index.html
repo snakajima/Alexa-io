@@ -4,7 +4,29 @@
     <script src="/js/remote.io.js"></script>
     <script>
         remoteIO.onIntent = (intent) => {
-            console.log('my intent', intent.name);
+            switch(intent.name) {
+            case 'GetNavigationIntent':
+              console.log('Direction to ' + intent.slots.Location.value);
+              break;
+            case 'GetNavigationFromIntent':
+              console.log('Direction from ' + intent.slots.From.value + ' to ' + intent.slots.Location.value);
+              break;
+            case 'GetLocationIntent':
+              console.log('Show me ' + intent.slots.Location.value);
+              break;
+            case 'ClearMyScheduleIntent':
+              console.log('Clear My Schedule');
+              break;
+            case 'MyScheduleIntent':
+              console.log('My Schedule');
+              break;
+            case 'SchedulePickupIntent':
+              console.log('Schedule a pick up');
+              break;
+            default:
+              console.log('unknown intent', intent.name);
+              break;
+            }
         }
     </script>
 </head>
