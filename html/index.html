@@ -6,10 +6,10 @@
         remoteIO.onIntent = (intent) => {
             switch(intent.name) {
             case 'GetNavigationIntent':
-              console.log('Navigate to ' + intent.slots.City.value);
+              console.log('Navigate to ' + intent.slots.Location.value);
               break;
-            case 'GetCityIntent':
-              console.log('Show me ' + intent.slots.City.value);
+            case 'GetLocationIntent':
+              console.log('Show me ' + intent.slots.Location.value);
               break;
             default:
               console.log('unknown intent', intent.name);
