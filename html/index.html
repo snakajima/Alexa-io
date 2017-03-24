@@ -8,6 +8,9 @@
             case 'GetNavigationIntent':
               console.log('Direction to ' + intent.slots.Location.value);
               break;
+            case 'GetNavigationFromIntent':
+              console.log('Direction from ' + intent.slots.From.value + ' to ' + intent.slots.Location.value);
+              break;
             case 'GetLocationIntent':
               console.log('Show me ' + intent.slots.Location.value);
               break;
